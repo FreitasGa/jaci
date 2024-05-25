@@ -4,7 +4,7 @@ export const topics: Topic[] = [
   {
     name: "Educação e Conscientização",
     description: "",
-    image: "",
+    image: "https://image.portaldacidade.com/unsafe/https://bucket.portaldacidade.com/pousoalegre.portaldacidade.com/img/news/2024-02/com-alastramento-da-dengue-prefeitura-faz-acoes-de-conscientizacao-em-escolas-65d60e42043ad.jpeg",
     measures: [
       {
         name: "Divulgação de Informações",
@@ -31,7 +31,7 @@ export const topics: Topic[] = [
   {
     name: "Métodos de Combate",
     description: "",
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLSRz9wxKBPOV2yKrFBgTdWVVeMTeLN5QzAw&usqp=CAU",
     measures: [
       {
         name: "Uso de Repelentes",
@@ -58,7 +58,7 @@ export const topics: Topic[] = [
   {
     name: "Medidas de Prevenção",
     description: "",
-    image: "",
+    image: "https://agencia.ac.gov.br/wp-content/uploads/2019/02/dengue3.jpg",
     measures: [
       {
         name: "Inspeção Regular",
