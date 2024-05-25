@@ -5,7 +5,7 @@ export const diseases: Disease[] = [
     name: "Dengue",
     description:
       "A dengue é uma doença viral transmitida pelo mosquito Aedes Aegypti.",
-    image: "https://via.placeholder.com/400x400",
+    image: "https://www.saopaulo.sp.gov.br/wp-content/uploads/2024/03/Sintomadengue_750x500-4f077b8a685f5916.jpg",
     symptoms: [
       {
         name: "Febre Alta",
@@ -59,7 +59,7 @@ export const diseases: Disease[] = [
     name: "Zika",
     description:
       "O vírus Zika é transmitido principalmente pelo mosquito Aedes Aegypti.",
-    image: "https://via.placeholder.com/400x400",
+    image: "https://cdn.statically.io/img/leianoticias.com.br/wp-content/uploads/2024/02/pessoa-doente-768x475.jpg?quality=70&f=auto",
     symptoms: [
       {
         name: "Febre Baixa",
@@ -117,7 +117,7 @@ export const diseases: Disease[] = [
     name: "Chikungunya",
     description:
       "A chikungunya é uma doença viral transmitida pelo mosquito Aedes Aegypti.",
-    image: "https://via.placeholder.com/400x400",
+    image: "https://simplesmentefeminino.com.br/wp-content/uploads/2016/05/zika-virus-4.jpg",
     symptoms: [
       {
         name: "Febre Alta",
