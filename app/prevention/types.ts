@@ -1,6 +1,5 @@
 export type Topic = {
   name: string;
-  description: string;
   image: string;
   measures: Measure[];
 };

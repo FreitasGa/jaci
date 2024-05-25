@@ -6,7 +6,6 @@ type TopicSectionProps = Topic;
 
 export default function TopicSection({
   name,
-  description,
   image,
   measures,
 }: TopicSectionProps) {
@@ -30,9 +29,6 @@ export default function TopicSection({
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
               {name}
             </h2>
-            <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {description}
-            </p>
           </div>
           <div className="grid gap-4">
             {measures.map((measure) => (

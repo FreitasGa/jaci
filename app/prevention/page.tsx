@@ -56,7 +56,6 @@ export default function Prevention() {
         <TopicSection
           key={topic.name.toLowerCase()}
           name={topic.name}
-          description={topic.description}
           image={topic.image}
           measures={topic.measures}
         />

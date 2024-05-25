@@ -1,6 +1,5 @@
 export type Disease = {
   name: string;
-  description: string;
   image: string;
   symptoms: Symptom[];
 };

@@ -53,7 +53,6 @@ export default function Symptoms() {
         <DiseaseSection
           key={disease.name.toLowerCase()}
           name={disease.name}
-          description={disease.description}
           image={disease.image}
           symptoms={disease.symptoms}
         />
