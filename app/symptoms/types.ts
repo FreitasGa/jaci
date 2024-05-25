@@ -10,10 +10,3 @@ export type Symptom = {
   description: string;
 };
 
-export interface Measure {
-  name: string;
-  topic: {
-    name: string;
-    description: string;
-  }[];
-}
