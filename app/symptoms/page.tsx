@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { diseases } from "./data";
 import DiseaseSection from "./components/disease-section";
 

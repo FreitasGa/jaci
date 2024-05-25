@@ -1,8 +1,8 @@
-import { type Symptom } from "../types";
+import { type Measure } from "../types";
 
-type SymptomItemProps = Symptom;
+type MeasureItemProps = Measure;
 
-export default function SymptomItem({ name, description }: SymptomItemProps) {
+export default function MeasureItem({ name, description }: MeasureItemProps) {
   return (
     <div className="flex items-start gap-4">
       <div>

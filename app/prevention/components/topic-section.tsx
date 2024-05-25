@@ -1,22 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-import { type Disease } from "../types";
-import SymptomItem from "./symptom-item";
+import { type Topic } from "../types";
+import MeasureItem from "./measure-item";
 
-type DiseaseSectionProps = Disease;
+type TopicSectionProps = Topic;
 
-export default function DiseaseSection({
+export default function TopicSection({
   name,
   description,
   image,
-  symptoms,
-}: DiseaseSectionProps) {
+  measures,
+}: TopicSectionProps) {
   const id = name.toLowerCase();
-  const imageDescriptor = `Sintomas de ${name}`;
+  const imageDescriptor = `Medidas de ${name}`;
 
   return (
     <section id={id} className="w-full border-t py-12 md:py-24 lg:py-32">
       <div className="grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-        <div>
+        <div className="order-last">
           <img
             src={image}
             alt={imageDescriptor}
@@ -35,11 +35,11 @@ export default function DiseaseSection({
             </p>
           </div>
           <div className="grid gap-4">
-            {symptoms.map((symptom) => (
-              <SymptomItem
-                key={symptom.name.toLowerCase()}
-                name={symptom.name}
-                description={symptom.description}
+            {measures.map((measure) => (
+              <MeasureItem
+                key={measure.name.toLowerCase()}
+                name={measure.name}
+                description={measure.description}
               />
             ))}
           </div>

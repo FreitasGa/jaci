@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jaci",
-  description: "projeto para matéria de Iot",
+  description:
+    "Jaci é uma plataforma de educação em saúde que visa informar e conscientizar a população sobre as doenças transmitidas pelo Aedes Aegypti.",
 };
 
 export default function RootLayout({
