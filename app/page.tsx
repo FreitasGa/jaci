@@ -7,7 +7,6 @@ import IndicatorBox from "./components/indicator-box";
 import { fetchNews } from "./clients/news";
 import NewsBox from "./components/news-box";
 import { ResponsiveBar } from "@nivo/bar";
-import { ResponsiveBarChart } from "./components/responsiveBarChart";
 
 const alertToColor: Record<number, Color> = {
   1: Color.Green,
