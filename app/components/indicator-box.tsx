@@ -29,18 +29,12 @@ export default function IndicatorBox({
   color
 }: IndicatorBoxProps) {
   return (
-    <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
-      <div className="space-y-1.5 p-6 flex flex-row items-center justify-between pb-2">
-        <h3 className="whitespace-nowrap tracking-tight text-sm font-medium">
-          {title}
-        </h3>
-      </div>
-      <div className="p-6">
-        <div className={`text-xl font-bold ${colorEnumToColorClass(color)}`}>{value}</div>
-        <p className=" text-xs text-gray-500 dark:text-gray-400 ">
-          {description}
-        </p>
-      </div>
+    <div className="rounded-lg border shadow-sm px-4 py-6 space-y-4 text-center">
+      <h3 className="tracking-tight text-base font-medium">
+        {title}
+      </h3>
+      <p className="text-3xl font-bold text-[#12664f]">{value}</p>
+      <p className="text-xs text-gray-600">{description}</p>
     </div>
   );
 }
