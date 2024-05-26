@@ -19,6 +19,12 @@ export default function Header() {
               Início
             </Link>
             <Link
+              href="/cases"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Casos
+            </Link>
+            <Link
               href="/prevention"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
