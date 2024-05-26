@@ -1,21 +1,21 @@
-import { ColorEnum } from "../types";
+import { Color } from "../../types";
 
 interface DataBoxProps {
   title: string;
   value: string | number;
   description: string;
-  color?: ColorEnum;
+  color?: Color;
 }
 
-const colorEnumToColorClass = (color?: ColorEnum): string => {
+const colorEnumToColorClass = (color?: Color): string => {
   switch (color) {
-    case ColorEnum.Green:
+    case Color.Green:
       return 'text-green-500';
-    case ColorEnum.Yellow:
+    case Color.Yellow:
       return 'text-yellow-500';
-    case ColorEnum.Orange:
+    case Color.Orange:
       return 'text-orange-500';
-    case ColorEnum.Red:
+    case Color.Red:
       return 'text-red-500';
     default:
       return '';

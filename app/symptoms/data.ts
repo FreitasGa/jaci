@@ -1,4 +1,4 @@
-import { Disease } from "./types";
+import { Disease } from "../types";
 
 export const diseases: Disease[] = [
   {

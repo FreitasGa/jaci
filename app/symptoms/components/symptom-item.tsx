@@ -1,4 +1,4 @@
-import { type Symptom } from "../types";
+import { type Symptom } from "../../types";
 
 type SymptomItemProps = Symptom;
 

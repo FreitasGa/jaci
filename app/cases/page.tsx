@@ -3,13 +3,13 @@
 import { DataBox } from "./components/dataBox";
 import { useDiseaseData } from "./diseaseHook";
 import { SectionHeader } from "./components/sectionHeader";
-import { ColorEnum } from "./types";
+import { Color } from "../types";
 
-const alertToColor: Record<number, ColorEnum> = {
-  1: ColorEnum.Green,
-  2: ColorEnum.Yellow,
-  3: ColorEnum.Orange,
-  4: ColorEnum.Red,
+const alertToColor: Record<number, Color> = {
+  1: Color.Green,
+  2: Color.Yellow,
+  3: Color.Orange,
+  4: Color.Red,
 };
 
 const alertToText: Record<number, string> = {

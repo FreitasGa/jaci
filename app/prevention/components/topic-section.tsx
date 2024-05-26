@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { type Topic } from "../types";
+import { type Topic } from "../../types";
 import MeasureItem from "./measure-item";
 
 type TopicSectionProps = Topic;

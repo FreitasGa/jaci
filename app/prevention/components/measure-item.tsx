@@ -1,4 +1,4 @@
-import { type Measure } from "../types";
+import { type Measure } from "../../types";
 
 type MeasureItemProps = Measure;
 

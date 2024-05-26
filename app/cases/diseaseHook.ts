@@ -1,21 +1,21 @@
 // hooks/useDiseaseData.ts
 
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { RequestDiseaseData } from "./types";
+import { DiseaseData } from "../types";
 
 export const useDiseaseData = () => {
-  const [data, setData] = useState<RequestDiseaseData | null>(null);
+  const [data, setData] = useState<DiseaseData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:3000/api/diseaseData"
+        const response = await fetch(
+          "http://localhost:3000/api/disease"
         );
-        setData(response.data);
+
+        setData(await response.json());
         setIsLoading(false);
       } catch (error) {
         console.error("Error in diseases API", { error });

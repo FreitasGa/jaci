@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { type Disease } from "../types";
+import { type Disease } from "../../types";
 import SymptomItem from "./symptom-item";
 
 type DiseaseSectionProps = Disease;
