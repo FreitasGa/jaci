@@ -22,7 +22,7 @@ export default function NewsBox({ title, author, url }: NewsBoxProps) {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm mt-4 text-[#12664f] font-bold hover:underline"
+          className="text-sm mt-4 text-[#62a8ac] font-bold hover:underline"
         >
           Ler mais
         </a>

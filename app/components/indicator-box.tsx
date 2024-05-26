@@ -33,7 +33,7 @@ export default function IndicatorBox({
       <h3 className="tracking-tight text-base font-medium">
         {title}
       </h3>
-      <p className="text-3xl font-bold text-[#12664f]">{value}</p>
+      <p className="text-3xl font-bold text-[#62a8ac]">{value}</p>
       <p className="text-xs text-gray-600">{description}</p>
     </div>
   );
