@@ -1,18 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { DiseaseData } from "./types";
+import { DiseaseData, News } from "./types";
 import fetchDiseaseData from "./clients/disease";
+import IndicatorBox from "./components/indicator-box";
+import { fetchNews } from "./clients/news";
+import NewsBox from "./components/news-box";
 
 export default function Home() {
   const [diseaseData, setDiseaseData] = useState<DiseaseData>();
+  const [news, setNews] = useState<News[]>();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       localStorage.setItem("position", JSON.stringify(position));
     });
 
-    fetchDiseaseData().then((data) => setDiseaseData(data));
+    fetchDiseaseData().then((data) => {
+      if (data !== null) {
+        setDiseaseData(data);
+      }
+    });
+
+    fetchNews().then((data) => {
+      if (data !== null) {
+        setNews(data);
+      }
+    });
   }, []);
 
   return (
@@ -62,7 +76,7 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full border-t py-12 md:py-24 lg:py-32">
-        <div className="flex flex-col items-center justify-between space-y-4 text-center md:flex-row md:space-y-0">
+        <div className="space-y-8 text-center md:flex-row">
           <div className="mx-auto max-w-[900px] space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Indicadores Essenciais
@@ -72,10 +86,46 @@ export default function Home() {
               em sua região
             </p>
           </div>
+          {diseaseData && (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <IndicatorBox
+                title="Total de Casos Anuais"
+                description="Número total de casos combinados de dengue, zika e chikungunya registrados este ano."
+                value={diseaseData.totalCases.total}
+              />
+              <IndicatorBox
+                title="Casos Atuais Semanais"
+                description="Casos Atuais Semanais"
+                value={diseaseData.currentCases.total}
+              />
+              <IndicatorBox
+                title="Estimativa de Casos para Semana"
+                description="Estimativa de novos casos combinados de dengue, zika e chikungunya para a semana."
+                value={diseaseData.estimatedCasesPerWeek.total}
+              />
+              <IndicatorBox
+                title="Nível de Alerta"
+                description="Número total de alertas de dengue, zika e chikungunya emitidos."
+                value={diseaseData.alert.total}
+              />
+            </div>
+          )}
         </div>
       </section>
-
-      {JSON.stringify(diseaseData)}
+      <section className="w-full border-t py-12 md:py-24 lg:py-32">
+        <div></div>
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {news &&
+            news.map((news) => (
+              <NewsBox
+                key={news.title}
+                title={news.title}
+                author={news.author}
+                url={news.url}
+              />
+            ))}
+        </div>
+      </section>
     </main>
   );
 }

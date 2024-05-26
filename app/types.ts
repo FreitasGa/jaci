@@ -53,3 +53,9 @@ export enum Color {
   Orange = "orange",
   Red = "red",
 }
+
+export type News = {
+  author: string;
+  title: string;
+  url: string;
+};
