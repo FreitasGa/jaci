@@ -1,3 +1,9 @@
+export enum DiseaseType {
+  Zika = "zika",
+  Dengue = "dengue",
+  Chikungunya = "chikungunya",
+}
+
 export type Disease = {
   name: string;
   image: string;
@@ -59,9 +65,3 @@ export type News = {
   title: string;
   url: string;
 };
-
-export enum DiseaseEnum {
-  zika = "zika",
-  dengue = "dengue",
-  chikungunya = "chikungunya",
-}

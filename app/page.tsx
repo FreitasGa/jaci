@@ -2,12 +2,46 @@
 
 import { BarChart, BookOpen, Shield } from "lucide-react";
 import { useEffect, useState } from "react";
-import { DiseaseData, News } from "./types";
+import { Color, DiseaseData, News } from "./types";
 import fetchDiseaseData from "./clients/disease";
 import { fetchNews } from "./clients/news";
 import IndicatorBox from "./components/indicator-box";
 import CaseChart from "./components/case-chart";
 import NewsBox from "./components/news-box";
+
+const alertToColor: Record<number, Color> = {
+  1: Color.Green,
+  2: Color.Yellow,
+  3: Color.Orange,
+  4: Color.Red,
+};
+
+type AlertInfo = {
+  value: string;
+  description: string;
+};
+
+const alertToText: Record<number, AlertInfo> = {
+  1: {
+    value: "Baixo",
+    description:
+      "Condições desfavoráveis para transmissão / risco baixo de transmissão",
+  },
+  2: {
+    value: "Moderado",
+    description:
+      "Condições favoráveis à transmissão viral com presença de circulação viral",
+  },
+  3: {
+    value: "Alto",
+    description: "Atividade elevada, porém dentro dos padrões históricos",
+  },
+  4: {
+    value: "Muito Alto",
+    description:
+      "Incidência extremamente alta em comparação com os padrões históricos",
+  },
+};
 
 export default function Home() {
   const [diseaseData, setDiseaseData] = useState<DiseaseData>();
@@ -111,18 +145,23 @@ export default function Home() {
               />
               <IndicatorBox
                 title="Nível de Alerta - Dengue"
-                description="Número total de alertas de dengue emitidos."
-                value={diseaseData.alert.dengue}
+                value={alertToText[diseaseData.alert.dengue].value}
+                description={alertToText[diseaseData.alert.dengue].description}
+                color={alertToColor[diseaseData!.alert.dengue]}
               />
               <IndicatorBox
                 title="Nível de Alerta - Zika"
-                description="Número total de alertas de zika emitidos."
-                value={diseaseData.alert.zika}
+                value={alertToText[diseaseData.alert.zika].value}
+                description={alertToText[diseaseData.alert.zika].description}
+                color={alertToColor[diseaseData!.alert.zika]}
               />
               <IndicatorBox
                 title="Nível de Alerta - Chikungunya"
-                description="Número total de alertas de chikungunya emitidos."
-                value={diseaseData.alert.chikungunya}
+                value={alertToText[diseaseData.alert.chikungunya].value}
+                description={
+                  alertToText[diseaseData.alert.chikungunya].description
+                }
+                color={alertToColor[diseaseData.alert.chikungunya]}
               />
             </div>
           )}

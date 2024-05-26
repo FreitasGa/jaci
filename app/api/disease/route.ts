@@ -1,6 +1,6 @@
-import { DiseaseEnum } from "@/app/types";
+import { DiseaseType } from "@/app/types";
 
-async function fetchDiseaseData(disease: DiseaseEnum) {
+async function fetchDiseaseData(disease: DiseaseType) {
   const params = new URLSearchParams({
     geocode: "1501402",
     ey_start: "2024",
@@ -23,10 +23,10 @@ async function fetchDiseaseData(disease: DiseaseEnum) {
 
 export async function GET() {
   try {
-    const diseases: DiseaseEnum[] = [
-      DiseaseEnum.zika,
-      DiseaseEnum.dengue,
-      DiseaseEnum.chikungunya,
+    const diseases: DiseaseType[] = [
+      DiseaseType.Zika,
+      DiseaseType.Dengue,
+      DiseaseType.Chikungunya,
     ];
 
     const promises = diseases.map((disease) => fetchDiseaseData(disease));
