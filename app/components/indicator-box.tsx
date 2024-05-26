@@ -1,13 +1,32 @@
+import { Color } from "../types";
+
 type IndicatorBoxProps = {
   title: string;
-  description: string;
-  value: number;
+  description?: string;
+  value: string | number;
+  color?: Color
+};
+
+const colorEnumToColorClass = (color?: Color): string => {
+  switch (color) {
+    case Color.Green:
+      return 'text-green-500';
+    case Color.Yellow:
+      return 'text-yellow-500';
+    case Color.Orange:
+      return 'text-orange-500';
+    case Color.Red:
+      return 'text-red-500';
+    default:
+      return '';
+  }
 };
 
 export default function IndicatorBox({
   title,
   description,
   value,
+  color
 }: IndicatorBoxProps) {
   return (
     <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
@@ -17,7 +36,7 @@ export default function IndicatorBox({
         </h3>
       </div>
       <div className="p-6">
-        <div className={`text-xl font-bold `}>{value}</div>
+        <div className={`text-xl font-bold ${colorEnumToColorClass(color)}`}>{value}</div>
         <p className=" text-xs text-gray-500 dark:text-gray-400 ">
           {description}
         </p>

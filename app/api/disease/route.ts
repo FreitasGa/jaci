@@ -68,13 +68,13 @@ export async function GET() {
           latestDataDengue.nivel,
       },
       estimatedCasesPerWeek: {
-        zika: latestDataZika.casos_semana,
-        chikungunya: latestDataChikungunya.casos_semana,
-        dengue: latestDataDengue.casos_semana,
+        zika: latestDataZika.casos_est,
+        chikungunya: latestDataChikungunya.casos_est,
+        dengue: latestDataDengue.casos_est,
         total:
-          latestDataZika.casos_semana +
-          latestDataChikungunya.casos_semana +
-          latestDataDengue.casos_semana,
+          latestDataZika.casos_est +
+          latestDataChikungunya.casos_est +
+          latestDataDengue.casos_est,
       },
     };
 
