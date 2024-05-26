@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col min-h-[100dvh]">
+    <main className="min-h-[100dvh]">
       <section
         style={{
           backgroundImage: `url('/background.jpg')`,
