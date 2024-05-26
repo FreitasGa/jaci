@@ -1,10 +1,12 @@
-async function fetchDiseaseData(disease: "dengue" | "chikungunya" | "zika") {
+import { DiseaseEnum } from "@/app/types";
+
+async function fetchDiseaseData(disease: DiseaseEnum) {
   const params = new URLSearchParams({
     geocode: "1501402",
     ey_start: "2024",
     ey_end: "2024",
     format: "json",
-    disease,
+    disease: disease,
   });
 
   const url = new URL("https://info.dengue.mat.br/api/alertcity");
@@ -21,11 +23,17 @@ async function fetchDiseaseData(disease: "dengue" | "chikungunya" | "zika") {
 
 export async function GET() {
   try {
-    const [zikaResult, dengueResult, chikungunyaResult] = await Promise.all([
-      fetchDiseaseData("zika"),
-      fetchDiseaseData("dengue"),
-      fetchDiseaseData("chikungunya"),
-    ]);
+    const diseases: DiseaseEnum[] = [
+      DiseaseEnum.zika,
+      DiseaseEnum.dengue,
+      DiseaseEnum.chikungunya,
+    ];
+
+    const promises = diseases.map((disease) => fetchDiseaseData(disease));
+
+    const [zikaResult, dengueResult, chikungunyaResult] = await Promise.all(
+      promises
+    );
 
     const latestDataZika = zikaResult[0];
     const latestDataDengue = dengueResult[0];

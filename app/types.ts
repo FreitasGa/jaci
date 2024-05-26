@@ -59,3 +59,9 @@ export type News = {
   title: string;
   url: string;
 };
+
+export enum DiseaseEnum {
+  zika = "zika",
+  dengue = "dengue",
+  chikungunya = "chikungunya",
+}
